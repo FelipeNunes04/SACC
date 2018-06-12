@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class ModalidadesRepository
  * @package App\Repositories
- * @version June 12, 2018, 3:30 am UTC
+ * @version June 12, 2018, 6:38 pm UTC
  *
  * @method Modalidades findWithoutFail($id, $columns = ['*'])
  * @method Modalidades find($id, $columns = ['*'])
@@ -20,7 +20,7 @@ class ModalidadesRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'idmodalidades',
+        'titulo',
         'descricao',
         'carga_maxima',
         'carga_efetuada',

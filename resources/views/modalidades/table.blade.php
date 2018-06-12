@@ -1,7 +1,7 @@
 <table class="table table-responsive" id="modalidades-table">
     <thead>
         <tr>
-            <th>Idmodalidades</th>
+            <th>Titulo</th>
         <th>Descricao</th>
         <th>Carga Maxima</th>
         <th>Carga Efetuada</th>
@@ -12,7 +12,7 @@
     <tbody>
     @foreach($modalidades as $modalidades)
         <tr>
-            <td>{!! $modalidades->idmodalidades !!}</td>
+            <td>{!! $modalidades->titulo !!}</td>
             <td>{!! $modalidades->descricao !!}</td>
             <td>{!! $modalidades->carga_maxima !!}</td>
             <td>{!! $modalidades->carga_efetuada !!}</td>

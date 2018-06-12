@@ -33,3 +33,5 @@ Route::resource('cursos', 'CursoController');
 Route::resource('modalidades', 'ModalidadesController');
 
 Route::resource('registros', 'RegistrosController');
+
+Route::resource('modalidades', 'ModalidadesController');

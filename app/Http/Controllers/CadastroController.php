@@ -6,6 +6,7 @@ use App\Repositories\SiteControllerRepository;
 use App\Repositories\MainMenuRepository;
 use App\Repositories\SliderRepository;
 use App\Repositories\FooterMenuRepository;
+use App\Repositories\CursoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -22,8 +23,11 @@ class CadastroController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function cadastro($tipo=1)
+    public function cadastro($tipo=1,Request $request, CursoRepository $cursoRepository)
     {
-        return view('cadastro',['tipo' => $tipo]);
+        $cursoRepository->pushCriteria(new RequestCriteria($request));
+        $cursos = $cursoRepository->pluck("nome", "idcurso")->all();
+        
+        return view('cadastro',['tipo' => $tipo,'cursos' => $cursos]);
     }
 }

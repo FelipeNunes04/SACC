@@ -93,7 +93,7 @@
                 <h5 class="section-title h1">SACC - SISTEMA DE CONTROLE DE ACCS</h5>
                 <div class="row">
                     <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                             <div class="mainflip">
                                 <div class="frontside">
@@ -101,7 +101,7 @@
                                         <div class="card-body text-center">
                                             <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
                                             <h4 class="card-title">Perfil Aluno</h4>
-                                            <p class="card-text">Faça o cadastro com sua matrícula</p>
+                                            <p class="card-text">Faça o cadastro para acessar</p>
                                             <a href="/cadastro/1" class="btn btn-primary">ENTRAR</a>
                                         </div>
                                     </div>
@@ -141,15 +141,15 @@
                     </div>
                     <!-- ./Team member -->
                     <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                             <div class="mainflip">
                                 <div class="frontside">
                                     <div class="card">
                                         <div class="card-body text-center">
                                             <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" alt="card image"></p>
-                                            <h4 class="card-title">Perfil Controle de Accs</h4>
-                                            <p class="card-text">Entre com o código SUAP</p>
+                                            <h4 class="card-title">Controle de Accs</h4>
+                                            <p class="card-text">Faça o cadastro para acessar</p>
                                             <a href="/cadastro/2" class="btn btn-primary">ENTRAR</a>
                                         </div>
                                     </div>
@@ -189,16 +189,64 @@
                     </div>
                     <!-- ./Team member -->
                     <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                             <div class="mainflip">
                                 <div class="frontside">
                                     <div class="card">
                                         <div class="card-body text-center">
                                             <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
-                                            <h4 class="card-title">Perfil Coordenador</h4>
-                                            <p class="card-text">Entre com o código SUAP</p>
+                                            <h4 class="card-title">Coordenação</h4>
+                                            <p class="card-text">Faça o cadastro para acessar</p>
                                             <a href="/cadastro/3" class="btn btn-primary">ENTRAR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <h4 class="card-title">Sunlimetech</h4>
+                                            <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                        <i class="fa fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                        <i class="fa fa-skype"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                        <i class="fa fa-google"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_05.png" alt="card image"></p>
+                                            <h4 class="card-title">Administrador</h4>
+                                            <p class="card-text">-</p>
+                                            <a href="/login" class="btn btn-primary">ENTRAR</a>
                                         </div>
                                     </div>
                                 </div>

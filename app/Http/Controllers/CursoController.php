@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateCursoRequest;
 use App\Http\Requests\UpdateCursoRequest;
 use App\Repositories\CursoRepository;
+use App\Repositories\CoordAccRepository;
+use App\Repositories\CoordCursoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
@@ -41,9 +43,15 @@ class CursoController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request, CoordAccRepository $coordaccRepository, CoordCursoRepository $coordcursoRepository)
     {
-        return view('cursos.create');
+        $coordcursoRepository->pushCriteria(new RequestCriteria($request));
+        $coordcurso = $coordcursoRepository->pluck("nome", "idcoordcurso")->all();
+
+        $coordaccRepository->pushCriteria(new RequestCriteria($request));
+        $coordacc = $coordaccRepository->pluck("nome", "idcoordacc")->all();
+
+        return view('cursos.create',['coordacc' => $coordacc,'coordcurso' => $coordcurso]);
     }
 
     /**
@@ -91,8 +99,14 @@ class CursoController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($id,Request $request, CoordAccRepository $coordaccRepository, CoordCursoRepository $coordcursoRepository)
     {
+        $coordcursoRepository->pushCriteria(new RequestCriteria($request));
+        $coordcurso = $coordcursoRepository->pluck("nome", "idcoordcurso")->all();
+
+        $coordaccRepository->pushCriteria(new RequestCriteria($request));
+        $coordacc = $coordaccRepository->pluck("nome", "idcoordacc")->all();
+
         $curso = $this->cursoRepository->findWithoutFail($id);
 
         if (empty($curso)) {
@@ -101,7 +115,7 @@ class CursoController extends AppBaseController
             return redirect(route('cursos.index'));
         }
 
-        return view('cursos.edit')->with('curso', $curso);
+        return view('cursos.edit',['coordacc' => $coordacc,'coordcurso' => $coordcurso])->with('curso', $curso);
     }
 
     /**

@@ -60,6 +60,7 @@ return array(
     'App\\Repositories\\CursoRepository' => $baseDir . '/app/Repositories/CursoRepository.php',
     'App\\Repositories\\ModalidadesRepository' => $baseDir . '/app/Repositories/ModalidadesRepository.php',
     'App\\Repositories\\RegistrosRepository' => $baseDir . '/app/Repositories/RegistrosRepository.php',
+    'App\\Repositories\\UserRepository' => $baseDir . '/app/Repositories/UserRepository.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',

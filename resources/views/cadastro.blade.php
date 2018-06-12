@@ -9,10 +9,11 @@
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'><link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/JeffreyNaval/pen/RRrVmo?limit=all&page=19&q=nav+tabs" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
         <style class="cp-pen-styles">
             html, body {
@@ -114,7 +115,7 @@
                                                 <input type="hidden" class="form-control" id="tipo" name="tipo" value="{{ $tipo }}">
 
                                                 <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full Name">
+                                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nome Completo">
                                                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
                                                     @if ($errors->has('name'))
@@ -136,7 +137,7 @@
                                                 </div>
 
                                                 <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                                                    <input type="password" class="form-control" name="password" placeholder="Password">
+                                                    <input type="password" class="form-control" name="password" placeholder="Senha">
                                                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                                                     @if ($errors->has('password'))
@@ -147,12 +148,45 @@
                                                 </div>
 
                                                 <div class="form-group has-feedback{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password">
+                                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirma Senha">
                                                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                                                     @if ($errors->has('password_confirmation'))
                                                     <span class="help-block">
                                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="form-group has-feedback{{ $errors->has('matricula') ? ' has-error' : '' }}">
+                                                    <input type="text" class="form-control" name="matricula" value="{{ old('matricula') }}" placeholder="{{ $tipo==2 || $tipo==3 ? 'SUAP' : 'Matricula' }}">
+                                                    <span class="glyphicon glyphicon-blackboard form-control-feedback"></span>
+
+                                                    @if ($errors->has('email'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('matricula') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="form-group has-feedback{{ $errors->has('contato') ? ' has-error' : '' }}">
+                                                    <input type="text" class="form-control" name="contato" value="{{ old('contato') }}" placeholder="Telefone">
+                                                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+
+                                                    @if ($errors->has('email'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('contato') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="form-group has-feedback{{ $errors->has('curso') ? ' has-error' : '' }}">
+                                                    {!! Form::select('curso', $cursos, '', ['class' => 'form-control selectpicker', 'data-live-search' => 'true'] ) !!}
+                                                    <span class="glyphicon glyphicon-scale form-control-feedback"></span>
+
+                                                    @if ($errors->has('email'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('curso') }}</strong>
                                                     </span>
                                                     @endif
                                                 </div>

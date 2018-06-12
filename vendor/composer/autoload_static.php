@@ -442,6 +442,7 @@ class ComposerStaticInit7529094137a54d312af4d17cc405ce44
         'App\\Repositories\\CursoRepository' => __DIR__ . '/../..' . '/app/Repositories/CursoRepository.php',
         'App\\Repositories\\ModalidadesRepository' => __DIR__ . '/../..' . '/app/Repositories/ModalidadesRepository.php',
         'App\\Repositories\\RegistrosRepository' => __DIR__ . '/../..' . '/app/Repositories/RegistrosRepository.php',
+        'App\\Repositories\\UserRepository' => __DIR__ . '/../..' . '/app/Repositories/UserRepository.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',

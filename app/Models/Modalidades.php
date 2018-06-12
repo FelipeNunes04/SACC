@@ -7,9 +7,9 @@ use Eloquent as Model;
 /**
  * Class Modalidades
  * @package App\Models
- * @version June 12, 2018, 3:30 am UTC
+ * @version June 12, 2018, 6:38 pm UTC
  *
- * @property integer idmodalidades
+ * @property string titulo
  * @property string descricao
  * @property integer carga_maxima
  * @property integer carga_efetuada
@@ -26,7 +26,7 @@ class Modalidades extends Model
     protected $primaryKey = 'idmodalidades';
 
     public $fillable = [
-        'idmodalidades',
+        'titulo',
         'descricao',
         'carga_maxima',
         'carga_efetuada',
@@ -40,6 +40,7 @@ class Modalidades extends Model
      */
     protected $casts = [
         'idmodalidades' => 'integer',
+        'titulo' => 'string',
         'descricao' => 'string',
         'carga_maxima' => 'integer',
         'carga_efetuada' => 'integer',

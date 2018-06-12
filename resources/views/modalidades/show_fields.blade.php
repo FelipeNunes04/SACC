@@ -4,6 +4,12 @@
     <p>{!! $modalidades->idmodalidades !!}</p>
 </div>
 
+<!-- Titulo Field -->
+<div class="form-group">
+    {!! Form::label('titulo', 'Titulo:') !!}
+    <p>{!! $modalidades->titulo !!}</p>
+</div>
+
 <!-- Descricao Field -->
 <div class="form-group">
     {!! Form::label('descricao', 'Descricao:') !!}

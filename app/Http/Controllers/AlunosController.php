@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateAlunosRequest;
 use App\Http\Requests\UpdateAlunosRequest;
 use App\Repositories\AlunosRepository;
+use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+Use Illuminate\Support\Facades\DB;
 
 class AlunosController extends AppBaseController
 {
@@ -27,10 +29,9 @@ class AlunosController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function index(Request $request)
+    public function index(Request $request, UserRepository $userRepository)
     {
-        $this->alunosRepository->pushCriteria(new RequestCriteria($request));
-        $alunos = $this->alunosRepository->all();
+        $alunos = DB::table('users')->where('tipo','=',1)->get();
 
         return view('alunos.index')
             ->with('alunos', $alunos);

@@ -1,5 +1,7 @@
+       <input type="hidden" name="aluno" value="{{ Auth::user()->id }}">
+
 <!-- Titulo Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-12">
     {!! Form::label('titulo', 'Titulo:') !!}
     {!! Form::text('titulo', null, ['class' => 'form-control']) !!}
 </div>
@@ -7,7 +9,7 @@
 <!-- Descricao Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('descricao', 'Descricao:') !!}
-    {!! Form::textarea('descricao', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('descricao', null, ['class' => 'form-control','rows' => 4, 'cols' => 3]) !!}
 </div>
 
 <!-- Carga Horaria Field -->
@@ -31,13 +33,7 @@
 <!-- Modalidade Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('modalidade', 'Modalidade:') !!}
-    {!! Form::number('modalidade', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Aluno Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('aluno', 'Aluno:') !!}
-    {!! Form::number('aluno', null, ['class' => 'form-control']) !!}
+    {!! Form::select('modalidade', $modalidades, ((isset($registros) && $registros->modalidade!=null) ? $registros->modalidade : ''), ['class' => 'form-control selectpicker', 'data-live-search' => 'true'] ) !!}
 </div>
 
 <!-- Submit Field -->

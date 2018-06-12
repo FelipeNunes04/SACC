@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>InfyOm Generator</title>
+    <title>SACC - SISTEMA DE CONTROLE DE ACCS</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- Bootstrap 3.3.7 -->
@@ -26,6 +26,8 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
     @yield('css')
 </head>
 
@@ -37,7 +39,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>InfyOm</b>
+                <b>SACC</b>
             </a>
 
             <!-- Header Navbar -->
@@ -70,9 +72,9 @@
                                             @if (Auth::user()->tipo==1)
                                                 Perfil Alunos
                                             @elseif (Auth::user()->tipo==2)
-                                                Perfil Coordenador
-                                            @elseif (Auth::user()->tipo==3)
                                                 Perfil Controle de Accs
+                                            @elseif (Auth::user()->tipo==3)
+                                                Perfil Coordenação
                                             @else
                                                 Perfil Administrador
                                             @endif
@@ -83,13 +85,13 @@
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         @if (Auth::user()->tipo==1)
-                                            <a href="/alunos/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                            <!--<a href="/alunos/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>-->
                                         @elseif (Auth::user()->tipo==2)
-                                            <a href="/coordcurso/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                            <!--<a href="/coord_accs/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>-->
                                         @elseif (Auth::user()->tipo==3)
-                                            <a href="/coordacc/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                            <!--<a href="/coord_curso/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>-->
                                         @else
-                                            <a href="/administrador/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                            <!--<a href="/administrador/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>-->
                                         @endif
                                     </div>
                                     <div class="pull-right">
@@ -118,7 +120,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright © 2018 ADS V.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -179,6 +181,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    
     @yield('scripts')
 </body>
 </html>

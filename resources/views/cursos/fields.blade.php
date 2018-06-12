@@ -13,13 +13,13 @@
 <!-- Coordcurso Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('coordcurso', 'Coordcurso:') !!}
-    {!! Form::number('coordcurso', null, ['class' => 'form-control']) !!}
+    {!! Form::select('coordcurso', $coordcurso, ((isset($curso) && $curso->coordcurso!=null) ? $curso->coordcurso : ''), ['class' => 'form-control selectpicker', 'data-live-search' => 'true'] ) !!}
 </div>
 
 <!-- Coordacc Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('coordacc', 'Coordacc:') !!}
-    {!! Form::number('coordacc', null, ['class' => 'form-control']) !!}
+    {!! Form::select('coordacc', $coordacc, ((isset($curso) && $curso->coordacc!=null) ? $curso->coordacc : ''), ['class' => 'form-control selectpicker', 'data-live-search' => 'true'] ) !!}
 </div>
 
 <!-- Submit Field -->

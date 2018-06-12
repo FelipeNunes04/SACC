@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateRegistrosRequest;
 use App\Http\Requests\UpdateRegistrosRequest;
 use App\Repositories\RegistrosRepository;
+use App\Repositories\ModalidadesRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
@@ -41,9 +42,12 @@ class RegistrosController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request, ModalidadesRepository $modalidadesRepository)
     {
-        return view('registros.create');
+        $modalidadesRepository->pushCriteria(new RequestCriteria($request));
+        $modalidades = $modalidadesRepository->pluck("descricao", "idmodalidades")->all();
+        
+        return view('registros.create',['modalidades' => $modalidades]);
     }
 
     /**
@@ -91,8 +95,11 @@ class RegistrosController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($id, Request $request, ModalidadesRepository $modalidadesRepository)
     {
+        $modalidadesRepository->pushCriteria(new RequestCriteria($request));
+        $modalidades = $modalidadesRepository->pluck("descricao", "idmodalidades")->all();
+
         $registros = $this->registrosRepository->findWithoutFail($id);
 
         if (empty($registros)) {
@@ -101,7 +108,7 @@ class RegistrosController extends AppBaseController
             return redirect(route('registros.index'));
         }
 
-        return view('registros.edit')->with('registros', $registros);
+        return view('registros.edit',['modalidades' => $modalidades])->with('registros', $registros);
     }
 
     /**
