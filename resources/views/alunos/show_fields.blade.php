@@ -1,7 +1,7 @@
-<!-- Id Field -->
+<!-- Idalunos Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $alunos->id !!}</p>
+    {!! Form::label('idalunos', 'Idalunos:') !!}
+    <p>{!! $alunos->idalunos !!}</p>
 </div>
 
 <!-- Matricula Field -->
@@ -22,33 +22,15 @@
     <p>{!! $alunos->email !!}</p>
 </div>
 
-<!-- Telefone Field -->
+<!-- Contato Field -->
 <div class="form-group">
-    {!! Form::label('telefone', 'Telefone:') !!}
-    <p>{!! $alunos->telefone !!}</p>
+    {!! Form::label('contato', 'Contato:') !!}
+    <p>{!! $alunos->contato !!}</p>
 </div>
 
 <!-- Curso Field -->
 <div class="form-group">
     {!! Form::label('curso', 'Curso:') !!}
     <p>{!! $alunos->curso !!}</p>
-</div>
-
-<!-- Status Field -->
-<div class="form-group">
-    {!! Form::label('status', 'Status:') !!}
-    <p>{!! $alunos->status !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $alunos->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $alunos->updated_at !!}</p>
 </div>
 

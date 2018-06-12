@@ -66,13 +66,31 @@
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->name !!}
-                                        <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
+                                        <small>
+                                            @if (Auth::user()->tipo==1)
+                                                Perfil Alunos
+                                            @elseif (Auth::user()->tipo==2)
+                                                Perfil Coordenador
+                                            @elseif (Auth::user()->tipo==3)
+                                                Perfil Controle de Accs
+                                            @else
+                                                Perfil Administrador
+                                            @endif
+                                        </small>
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        @if (Auth::user()->tipo==1)
+                                            <a href="/alunos/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                        @elseif (Auth::user()->tipo==2)
+                                            <a href="/coordcurso/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                        @elseif (Auth::user()->tipo==3)
+                                            <a href="/coordacc/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                        @else
+                                            <a href="/administrador/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Perfil</a>
+                                        @endif
                                     </div>
                                     <div class="pull-right">
                                         <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat"

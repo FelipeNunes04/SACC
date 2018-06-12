@@ -3,37 +3,34 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Alunos
  * @package App\Models
- * @version June 10, 2018, 8:43 pm UTC
+ * @version June 12, 2018, 3:26 am UTC
  *
  * @property string matricula
  * @property string nome
  * @property string email
- * @property string telefone
- * @property integer curso
- * @property string status
+ * @property string contato
+ * @property string curso
  */
 class Alunos extends Model
 {
-    use SoftDeletes;
 
     public $table = 'alunos';
     
+    public $timestamps = false;
 
-    protected $dates = ['deleted_at'];
 
+    protected $primaryKey = 'idalunos';
 
     public $fillable = [
         'matricula',
         'nome',
         'email',
-        'telefone',
-        'curso',
-        'status'
+        'contato',
+        'curso'
     ];
 
     /**
@@ -42,12 +39,12 @@ class Alunos extends Model
      * @var array
      */
     protected $casts = [
+        'idalunos' => 'integer',
         'matricula' => 'string',
         'nome' => 'string',
         'email' => 'string',
-        'telefone' => 'string',
-        'curso' => 'integer',
-        'status' => 'string'
+        'contato' => 'string',
+        'curso' => 'string'
     ];
 
     /**
